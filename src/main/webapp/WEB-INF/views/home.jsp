@@ -19,7 +19,7 @@
 	</h1>
 
 	<a href="/ssmvcp3?language=en"><spring:message
-			code="home.label.english" /></a> |
+			code="home.label.english" /></a>
 	<a href="/ssmvcp3?language=es"><spring:message
 			code="home.label.spanish" /></a>
 
@@ -27,6 +27,35 @@
 		<spring:message code="home.label.time" />
 		${serverTime}.
 	</P>
+	
+	<P>
+		<spring:message code="home.label.time" />
+		${serverTime}.
+	</P>
+	
+	<h3>Datos en DIVS</h3>	
+	<DIV th:text="${user1.name}">user1</DIV>
+	<DIV th:text="${user2.name}">user2</DIV>
+	<DIV th:text="${user3.name}">user3</DIV>
+	
+	<h3>datos en lista</h3>
+	<ul>
+		<li th:text="${user1.name}">user1</li>
+		<li th:text="${user2.name}">user2</li>
+		<li th:text="${user3.name}">user3</li>
+	</ul>
+	
+	<ul th:each = "user : ${userlist}">
+		<li th:text="${user.name}">user</li>
+	</ul>
+	
+	<h3>Datos en tabla</h3>
+	<table>
+		<tr th:each = "user : ${userlist}">
+			<td th:text="${user.name}">user</td>
+		</tr>
+	</table>
+
 	<div id="msg"></div>
 </body>
 </html>

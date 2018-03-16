@@ -51,9 +51,11 @@
 	
 	<h3>Datos en tabla</h3>
 	<table>
-		<tr th:each = "user : ${userlist}">
-			<td th:text="${user.name}">user</td>
-		</tr>
+		<block th:each = "user : ${userlist}">
+			<tr>
+				<td th:text="${user.name}">user</td>
+			</tr>
+		</block>
 	</table>
 
 	<div id="msg"></div>
